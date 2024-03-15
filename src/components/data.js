@@ -1,4 +1,4 @@
-export const POSTS = [
+export const initialPosts = [
   {
     id: 'p1',
     title: 'Title 1 Duis et sem id ex fringilla scelerisque. Curabitur velit elit, vulputate nec scelerisque eu.',

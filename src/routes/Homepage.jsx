@@ -1,5 +1,5 @@
 
-import {POSTS} from '../components/data';
+import {initialPosts} from '../components/data';
 import Post from "./Post";
 
 
@@ -12,7 +12,7 @@ import Post from "./Post";
               <ul>
 
                 {/* call a componet post- for individual post, passing the id as props. So we do not load the the data array in two compoenents- duplicated? ana */}
-                  {POSTS.map(post => (
+                  {initialPosts.map(post => (
                     <>
                       <li key={post.id}>
                         <Post id={post.id} author={post.author}>
