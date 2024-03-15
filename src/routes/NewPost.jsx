@@ -46,7 +46,7 @@ export default function NewPost() {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div id="tagsInput">
+        <div id="authorInput">
           <label htmlFor="author">Author</label>
           <input
             type="text"
@@ -56,7 +56,7 @@ export default function NewPost() {
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <div id="textBodyInput">
+        <div id="postTextInput">
           <label htmlFor="postText">Blog post</label>
           <textarea
             id="content"

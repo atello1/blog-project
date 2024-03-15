@@ -4,7 +4,7 @@ import Post from "./Post";
 
 
   export default function Homepage ({ posts, handleDelete }) {
-
+console.log(initialPosts);
       return (
           <>
           <h1>Homepage</h1>
@@ -19,6 +19,7 @@ import Post from "./Post";
                           onDelete={handleDelete}
                           id={post.id}
                           author={post.author}
+                          title={post.title}
                           >
                           {post.content}
                         </Post>
