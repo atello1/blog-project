@@ -7,6 +7,7 @@ import RootLayout from "./routes/RootLayout";
 import ErrorPage from "./routes/ErrorPage";
 import Homepage from "./routes/Homepage";
 import BlogDetail from "./routes/BlogDetail";
+import NewPost from "./routes/NewPost";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: "/BlogDetail/:id", element: <BlogDetail /> },
+      { path: "/NewPost", element: <NewPost /> },
     ],
   },
 ]);

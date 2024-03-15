@@ -17,16 +17,16 @@ export default function MainNavigation() {
               Home
             </NavLink>
           </li>
-          {/* <li>
+          {<li>
             <NavLink
-              to="/BlogDetail"
+              to="/NewPost"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              Blog listing
+              New post
             </NavLink>
-          </li> */}
+          </li> }
         </ul>
       </nav>
     </header>
