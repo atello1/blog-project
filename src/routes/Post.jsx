@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
         <>
           <h2>{props.title}</h2>
           <p>{props.author}</p>
-          {/*  <div>{props.children}</div> */}
           <div>{truncateString(props.children, 100)}</div>
           <Link to={`/BlogDetail/${props.id}`}>See details</Link>
         </>

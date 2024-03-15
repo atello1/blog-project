@@ -3,7 +3,7 @@ import {initialPosts} from '../components/data';
 import Post from "./Post";
 
 
-  export default function Homepage ({ posts, handleDelete }) {
+  export default function Homepage () {
 console.log(initialPosts);
       return (
           <>
@@ -16,7 +16,6 @@ console.log(initialPosts);
                     <>
                       <li key={post.id}>
                         <Post
-                          onDelete={handleDelete}
                           id={post.id}
                           author={post.author}
                           title={post.title}
