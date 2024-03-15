@@ -7,6 +7,7 @@ export default function BlogDetail () {
     console.log(post);
     return (
         <>
+            <h1>Detail page</h1>
             <h2>{post.title}</h2>
             <p>{post.author}</p>
             <div>{post.content}</div>
