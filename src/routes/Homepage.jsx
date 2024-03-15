@@ -3,7 +3,7 @@ import {initialPosts} from '../components/data';
 import Post from "./Post";
 
 
-  export default function Homepage () {
+  export default function Homepage ({ posts, handleDelete }) {
 
       return (
           <>
@@ -15,7 +15,11 @@ import Post from "./Post";
                   {initialPosts.map(post => (
                     <>
                       <li key={post.id}>
-                        <Post id={post.id} author={post.author}>
+                        <Post
+                          onDelete={handleDelete}
+                          id={post.id}
+                          author={post.author}
+                          >
                           {post.content}
                         </Post>
                       </li>

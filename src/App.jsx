@@ -9,6 +9,8 @@ import Homepage from "./routes/Homepage";
 import BlogDetail from "./routes/BlogDetail";
 import NewPost from "./routes/NewPost";
 
+import { initialPosts } from './components/data';
+
 
 const router = createBrowserRouter([
   {

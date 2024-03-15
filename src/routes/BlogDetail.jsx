@@ -1,7 +1,24 @@
 import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 import {initialPosts} from '../components/data';
+import { useNavigate } from "react-router-dom";
 
 export default function BlogDetail () {
+ // const [posts, setPosts] = useState(initialPosts);
+  const navigate = useNavigate();
+
+  function onDelete(deleteId) {
+
+
+    for (let i = initialPosts.length - 1; i >= 0; --i) {
+      if (initialPosts[i].id === deleteId) {
+        initialPosts.splice(i, 1);
+        break;
+      }
+    }
+    navigate("/");
+  }
+
     const params = useParams();
     const post = initialPosts.find(post =>  post.id==params.id );
     console.log(post);
@@ -12,6 +29,7 @@ export default function BlogDetail () {
             <p>{post.author}</p>
             <div>{post.content}</div>
             <p>{params.id}</p>
+            <a onClick={()=>onDelete(params.id)}>delete</a>
 
         </>
     )
