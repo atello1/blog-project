@@ -33,7 +33,7 @@ export default function NewPost() {
   }
 
   return (
-    <div id="newPostWrapper">
+    <div class="newPostWrapper">
       <h2>Write a new post</h2>
       <form>
         <div id="titleInput">

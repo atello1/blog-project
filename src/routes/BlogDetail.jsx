@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function BlogDetail () {
  // const [posts, setPosts] = useState(initialPosts);
-  const [isDeleted, setIsDeleted] = useState(false);
+
   const navigate = useNavigate();
 
   function onDelete(deleteId) {
@@ -15,7 +15,6 @@ export default function BlogDetail () {
       if (initialPosts[i].id === deleteId) {
         if(window.confirm('Delete the item?')){
           initialPosts.splice(i, 1);
-          setIsDeleted(true);
           break;
         }
 
