@@ -9,17 +9,27 @@ export default function NewPost() {
     content: '',
   });
 
-  const [errors, setErrors] = useState({
-    title: '',
-    author: '',
-    content: '',
-  });
+  const [errors, setErrors] = useState(
+    {
+      title: '',
+      author: '',
+      content: '',
+    }
+  );
 
   const navigate = useNavigate();
 
   const validateForm = () => {
     let isValid = true;
-    const newErrors = { ...errors };
+
+    const newErrors = {...errors };
+    // spread operator
+    // pull out from object,because setErrors is expecting an object :
+    /* const newErrors = {
+      title: '',
+      author: '',
+      content: '',
+     }; */
 
     if (formData.title.trim() === '') {
       newErrors.title = 'Title is required';
@@ -39,8 +49,14 @@ export default function NewPost() {
     } else {
       newErrors.content = '';
     }
-
     setErrors(newErrors);
+    /* setErrors(
+        {
+          title: '',
+          author: '',
+          content: '',
+        }
+     ); */
     return isValid;
   };
 
@@ -74,8 +90,11 @@ export default function NewPost() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    /* destructuring. We are aware of the keys of the object e.target: 'name' and 'value',
+    so that we can acces by the key
+    const name = e.target.name;
+    const value = e.target.value; */
     setFormData({ ...formData, [name]: value });
-
   };
 
   return (
