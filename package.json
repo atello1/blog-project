@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://atello1.github.io/blog-project/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -28,3 +29,4 @@
     "vite": "^5.1.6"
   }
 }
+//https://create-react-app.dev/docs/deployment/#github-pages
