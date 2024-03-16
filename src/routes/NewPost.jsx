@@ -2,25 +2,65 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { initialPosts } from '../components/data';
 
-
-
 export default function NewPost() {
+  const [formData, setFormData] = useState({
+    title: '',
+    author: '',
+    content: '',
+  });
+
+  const [errors, setErrors] = useState({
+    title: '',
+    author: '',
+    content: '',
+  });
+
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [content, setContent] = useState("");
 
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = { ...errors };
 
-  function createNewPost() {
-    const newPost = {
-      id: newId(),
-      title: title,
-      author: author,
-      content: content
-    };
-    initialPosts.push(newPost);
-    navigate("/");
-  }
+    if (formData.title.trim() === '') {
+      newErrors.title = 'Title is required';
+      isValid = false;
+    } else {
+      newErrors.title = '';
+    }
+    if (formData.author.trim() === '') {
+      newErrors.author = 'Author is required';
+      isValid = false;
+    } else {
+      newErrors.author = '';
+    }
+    if (formData.content.trim() === '') {
+      newErrors.content = 'Content is required';
+      isValid = false;
+    } else {
+      newErrors.content = '';
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      console.log('Form submitted with data:', formData);
+      const newPost = {
+        id: newId(),
+        title: formData.title,
+        author: formData.author,
+        content: formData.content
+      };
+      initialPosts.push(newPost);
+      navigate("/");
+    } else {
+      console.log('Form has validation errors');
+    }
+  };
 
   function newId() {
     let id;
@@ -32,43 +72,49 @@ export default function NewPost() {
     return id;
   }
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+  };
+
   return (
-    <div class="newPostWrapper">
+    <div className="newPostWrapper">
       <h2>Write a new post</h2>
-      <form>
-        <div id="titleInput">
+      <form onSubmit={handleSubmit}>
+        <div className='inputWp'>
           <label htmlFor="title">Title of post</label>
           <input
             type="text"
             id="title"
             name="title"
-            placeholder="Post title..."
-            onChange={(e) => setTitle(e.target.value)}
+            value={formData.title}
+            onChange={handleInputChange}
           />
+          <span className="errorMessage">{errors.title}</span>
         </div>
-        <div id="authorInput">
+        <div className='inputWp'>
           <label htmlFor="author">Author</label>
           <input
             type="text"
             id="author"
             name="author"
-            placeholder="author..."
-            onChange={(e) => setAuthor(e.target.value)}
+            value={formData.author}
+            onChange={handleInputChange}
           />
+          <span className="errorMessage">{errors.author}</span>
         </div>
-        <div id="postTextInput">
+        <div className='inputWp'>
           <label htmlFor="postText">Blog post</label>
           <textarea
             id="content"
             name="content"
-            placeholder="Write your post here..."
-            onChange={(e) => setContent(e.target.value)}
+            value={formData.content}
+            onChange={handleInputChange}
           />
+          <span className="errorMessage">{errors.content}</span>
         </div>
-
-        <button type="button" onClick={createNewPost}>
-          Publish
-        </button>
+        <button type="submit">Publish</button>
       </form>
     </div>
   );

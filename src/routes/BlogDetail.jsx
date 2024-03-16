@@ -23,26 +23,19 @@ export default function BlogDetail () {
    navigate("/");
   }
 
- /*  if(isDeleted){
-    displayContent = 'The article has been deleted'
-  } else{
-    displayContent = 'Fail'
+  const params = useParams();
+  const post = initialPosts.find(post =>  post.id==params.id );
+    console.log(post);
+  return (
+      <>
+          <h1>Detail page</h1>
 
-  } */
+          <h2>{post.title}</h2>
+          <p>{post.author}</p>
+          <div>{post.content}</div>
+          <p>{params.id}</p>
+          <a onClick={()=>onDelete(params.id)}>delete</a>
 
-    const params = useParams();
-    const post = initialPosts.find(post =>  post.id==params.id );
-     console.log(post);
-    return (
-        <>
-            <h1>Detail page</h1>
-
-            <h2>{post.title}</h2>
-            <p>{post.author}</p>
-            <div>{post.content}</div>
-            <p>{params.id}</p>
-            <a onClick={()=>onDelete(params.id)}>delete</a>
-
-        </>
-    )
+      </>
+  )
 }
