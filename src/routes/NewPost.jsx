@@ -133,7 +133,7 @@ export default function NewPost() {
           />
           <span className="errorMessage">{errors.content}</span>
         </div>
-        <button type="submit">Publish</button>
+        <button className='bouton' type="submit">Publish</button>
       </form>
     </div>
   );
