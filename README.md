@@ -9,9 +9,9 @@
 ## Testing instructions (how to manually test different functionalities)
 
 ### Home page
-- When click on see details you should go to the detail page with the full post
+- When click on see details you should go to the detail page where the full post is displayed
 
-### Deatil page
+### Detail page
 - When click the delete button a pop up shold appears asking if you want to delete the item
 - If you click yes the item should not appears in the home page
   
