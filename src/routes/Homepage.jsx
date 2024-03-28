@@ -6,10 +6,8 @@ import Post from "./Post";
   export default function Homepage () {
       //console.log(initialPosts);
       return (
-          <>
-          <h1>Homepage</h1>
-              <h2>Blog listing</h2>
-              <ul>
+
+              <ul className='blogListing'>
                   {initialPosts.map(post => (
                     <>
                       <li key={post.id}>
@@ -25,6 +23,6 @@ import Post from "./Post";
                   ))}
 
               </ul>
-          </>
+
       )
   }

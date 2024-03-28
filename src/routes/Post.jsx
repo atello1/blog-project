@@ -13,10 +13,10 @@ import { Link } from 'react-router-dom';
       return (
 
         <>
-          <h2>{props.title}</h2>
-          <p>{props.author}</p>
-          <div>{truncateString(props.children, 100)}</div>
-          <Link to={`/BlogDetail/${props.id}`}>See details</Link>
+          <h2 className='blogListing__title'>{props.title}</h2>
+          <p className='blogListing__author'>{props.author}</p>
+          <div className='blogListing__extract'>{truncateString(props.children, 100)}</div>
+          <Link className='bouton' to={`/BlogDetail/${props.id}`}>See details</Link>
         </>
       )
   }

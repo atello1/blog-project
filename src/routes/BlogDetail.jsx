@@ -25,13 +25,11 @@ export default function BlogDetail () {
   console.log(post);
   return (
       <>
-          <h1>Detail page</h1>
-
           <h2>{post.title}</h2>
           <p>{post.author}</p>
-          <div>{post.content}</div>
-          <p>{params.id}</p>
-          <a onClick={()=>onDelete(params.id)}>delete</a>
+          <div className='blogDetailContent'>{post.content}</div>
+          {/* <p>{params.id}</p> */}
+          <a className='bouton' onClick={()=>onDelete(params.id)}>delete</a>
 
       </>
   )

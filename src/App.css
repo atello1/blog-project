@@ -1,0 +1,93 @@
+body {
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+.banner {
+	background: #ffffff url('../public/banner.jpg') no-repeat center center /
+		cover;
+	height: 70vh;
+	color: #ffffff;
+}
+
+.container {
+	max-width: 680px;
+	margin: 0 auto;
+}
+
+.container h1 {
+	font-weight: 300;
+	font-size: 70px;
+	margin-bottom: 10px;
+	margin-top: 160px;
+}
+
+.container p {
+	line-height: 1.6rem;
+}
+
+.container {
+	max-width: 680px;
+	margin: 0 auto;
+}
+
+.container h1 {
+	font-weight: 300;
+	font-size: 70px;
+	margin-bottom: 10px;
+	margin-top: 160px;
+}
+
+.container p {
+	line-height: 1.6rem;
+}
+
+.mainContent {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 40px 30px 100px;
+}
+
+ul.blogListing {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+}
+
+.blogListing__title {
+	margin-bottom: 0px;
+}
+
+.blogListing__author {
+	margin-top: 4px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.blogListing__extract {
+	margin-bottom: 30px;
+}
+
+.blogDetailContent {
+	line-height: 2rem;
+	margin-bottom: 50px;
+}
+
+.bouton {
+	background: #494b8a;
+	color: white;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-radius: 5px;
+	font-size: 16px;
+	text-transform: uppercase;
+	transform: all 0.3s ease;
+	cursor: pointer;
+}
+.bouton:hover {
+	background: #d379b6;
+}

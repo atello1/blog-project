@@ -8,16 +8,21 @@
 
   .list {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: bold;
+
   }
 
   .list a {
     text-decoration: none;
-    color: var(--color-primary-400);
+    color: white;
   }
 
   .list a:hover,
   .list a.active {
-    color: green;
+    color: #bd6793;
     text-decoration: underline;
   }
